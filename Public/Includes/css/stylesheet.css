@@ -1,0 +1,58 @@
+.mainbody{
+padding-top: 50px;
+}
+.fields{
+	text-align: center;
+}
+
+tbody th
+{
+    font-weight: normal;
+}
+.newcustomer{
+    float: left;
+}
+.edit{
+    display: initial;
+}
+.noedit{
+    display: initial;
+}
+.noeditt{
+    display: initial;
+}
+.view{
+    float: right;
+}
+
+
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+
+/* Portrait & landscape phone */
+
+@media (min-width: 768px) and (max-width: 991px) {
+   
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+   
+}
+@media (min-width: 480px) and (max-width: 767px) {
+   
+}
+@media (max-width: 480px) {
+
+}
+@media (min-width: 992px) {
+  
+}
+/*Landscape phone to portrait tablet*/ 
+@media (max-width: 768px) {
+
+}
+@media (min-width: 1200px) {
+    
+}

@@ -1,0 +1,63 @@
+ <div class="container content fields">
+            <div>
+                <input type="text" id="customername" placeholder="Customer Name" ng-model="txtSearch">
+                <button type="button" ng-click="searchBy()" class="btn btn-primary" id="search" >
+
+                <span class="glyphicon glyphicon-search"></span></button>
+                </div>
+             <div>
+                <button type="button" ng-click="viewAll()" ng-model="viewAllData" class="btn btn-warning view" id="btnviewall">View All</button> </div>             
+                <a role="button" href="#myModal" id="addNewUser" ng-click="Addnewcus()" data-toggle="modal" class="btn btn-default newcustomer"><span class="glyphicon glyphicon-user"></span> Add New Customer</a>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">&times;</button>
+                                <h3 class="modal-title">SBI Customer Details&nbsp<span class="glyphicon glyphicon-th"></span></h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    Fill all the fields</p>
+                                    <!--  <form class="horizontal-form"> -->
+                                    <form class="form-horizontal" validate>
+                                       <!-- <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="id">Id</label>
+                                        <input type="text" ng-model="newdata.id" id="txtId" class="col-sm-8" required="true">
+                                      </div>  -->
+                                      <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="id">Name</label>
+                                        <input type="text" ng-model="newdata.firstname"  id="txtName" name="txtName" class="col-sm-8" value="" aria-describedby="name-format" required="true">
+                                      </div>                                        
+                                      <div class="form-group">
+                                         <label class="col-sm-2 control-label" for="id">A/C No</label>
+                                         <input type="text" ng-model="newdata.accountnumber"  id="txtAccountNumber" class="col-sm-8" required="true">
+                                        </div>                                        
+                                        <div class="form-group">
+                                          <label class="col-sm-2 control-label" for="id">A/C Type</label>
+                                          <input type="text" ng-model="newdata.accounttype"  id="txtAccountType" class="col-sm-8" required="true">
+                                        </div>                                        
+                                        <div class="form-group">
+                                          <label class="col-sm-2 control-label" for="id">Age</label>
+                                          <input type="text" ng-model="newdata.age" id="txtAge" class="col-sm-8" required="true">
+                                        </div>                                        
+                                        <div class="form-group">
+                                          <label class="col-sm-2 control-label" for="id">Address</label>
+                                          <input type="text" ng-model="newdata.address" id="txtAddress" class="col-sm-8" required="true">
+                                        </div>                                        
+                                        <div class="form-group">
+                                          <label class="col-sm-2 control-label" for="id">Contact</label>
+                                          <input type="text" ng-model="newdata.phone"  id="txtContact" class="col-sm-8" required="true">
+                                        </div>                                      
+                                    
+                            <!-- </div> -->
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" role="button" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary" ng-hide="submithide" ng-click="addNewRow()" id="submitbtn" role="button" type="submit">Submit</button>
+                                    <button class="btn btn-primary" ng-hide="updateHide" ng-click="updateRow(newdata.id,newdata)" id="updatebtn" role="button">Update</button>
+                                </div>
+                                </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Website Title & Description for Search Engine purposes -->
+    <title>State Bank Of India</title>
+    <meta name="description" content="">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+    <link href="Includes/css/stylesheet.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="Js/jquery-3.1.0.js"></script>
+</head> <!-- end of head -->
+
+<body ng-app="myApp">
+    <nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a><img src="Images/logo1.jpg"></a>                
+            </div> <!-- end navbar-header -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SBI services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Music Mojo</a></li>
+                            <li><a href="#">Star Jam</a></li>
+                            <li><a href="#">Love Bytes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">I Personaliy</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">The Cheif</a></li>
+                        </ul>
+                    </li>
+                    <li class="activeaa"><a href="#">Loan<span class="sr-only"></span></a></li>
+                    <li class="activeaa"><a href="#">SBI Plans<span class="caret"></span></a></li>
+                    <li class="activeaa"><a href="#">Security Tips<span class="caret"></span></a></li>
+                    <li class="activeaa"><a href="#">Help<span class="caret"></span></a></li>
+                    <li class="activeaa"><a href="#">Offers<span class="caret"></span></a></li>
+                </ul>            
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li>
+                              <a href="#"><span class="glyphicon glyphicon-user"></span>My Profile</a>
+                           </li>
+                           <li>
+                              <a href="#"><span class="glyphicon glyphicon-camera"></span>Photo</a>
+                           </li>
+                           <li>
+                              <a href="#"><span class="glyphicon glyphicon-wrench"></span>Setting</a>
+                           </li>
+                           <li>
+                              <a href="#"><span class="glyphicon glyphicon-"></span>Logout</a>
+                           </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>   <!-- end of collapse navbar-collapse -->  
+      </div> <!-- end container -->
+  </nav>    <!-- end nav -->
+ 
+  <!-- main container -->       
+<div class="container mainbody"  id="main" ng-controller="controller1" >
+    <div class="row" id="bigCallout">
+        <div class="container callout">               
+            <div class="page-header">
+                <marquee style="font-family:Book Antiqua; font-size: 28px; color: white" bgcolor="#000080" scrolldelay="90" scrollamount="5" height="30px">Welcome to State Bank Of India....  Fastest Banking, Safe-Locker, Internet Banking, 100% Trust,  </marquee>
+            </div>   <!-- end page-header -->
+
+            <!-- Input search text first controller-->
+           
+            <cus-dir></cus-dir>   
+                           <!-- end modal window -->
+        </div>
+    </div>        
+    <div class="container2">                                       
+            <table class="table-responsive table table-border">                   
+                  <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Account Number</th>
+                              <th>Account Type</th>
+                              <th>Age</th>
+                              <th>Address</th>
+                              <th>Contact</th>
+                              <th>More</th>
+                          </tr>
+                  </thead>
+                    <tbody id="xyz">
+                       <tr id="trow" ng-repeat="x in view1">
+                        <td>{{x.id}}</td>
+                        <td>{{x.firstname}}</td>
+                        <td>{{x.accountnumber}}</td>
+                        <td>{{x.accounttype}}</td>             
+                        <td>{{x.age}}</td>
+                        <td>{{x.address}}</td>
+                        <td>{{x.phone}}</td> 
+                 <!--        <td><button type="button">Edit</button></td>
+                         <td><button type="button">Delete</button></td> -->
+                        <!-- edit delete buttons --> 
+                        <td><button type="button" ng-click="editRow(x.id)" id="editbtn" data-toggle="modal" ng-hide="editHide()" data-target="#myModal" data-id="{{id}}" class="btn btn-success noeditt btnedit">Edit</button></td>  
+                        <td><button type="button" ng-click="removeRow(x.id)" id="deletebtn" data-id="{{id}}" class="btn btn-danger edit btndelete"><span class="glyphicon glyphicon-trash"></span></button></td>       
+                    </tr>
+                </tbody>
+           </table>
+           </div>         
+
+<!-- next prev button -->
+<div class="container">
+ <button type="button"  id="prev" class="btn btn-default pull-left"><span class="glyphicon glyphicon-fast-backward"></span></button>
+ <button type="button" id= "next" class="btn btn-default pull-right"><span class="glyphicon glyphicon-fast-forward"></span></button>
+</div>
+</div>
+
+<!-- All Javascript at the bottom of the page for faster page loading -->
+<!-- First try for the online version of jQuery-->
+<script src="http://code.jquery.com/jquery.js"></script>
+<!-- If no online access, fallback to our hardcoded version of jQuery -->
+<script>
+    window.jQuery || document.write('<script src="Js/jquery-3.1.0.js"><\/script>')
+</script>
+
+<!-- Custom JS -->
+<script src="Includes/js/newscript.js"></script>
+ <script src="Includes/js/servicepage.js"></script>
+
+
+<script type="text/javascript" src="Bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
